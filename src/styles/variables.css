@@ -1,0 +1,14 @@
+:root {
+  --white: #FFFFFF;
+  --inputs: #F7F7F7;
+  --bg-light: #F2F4F7;
+  --main: #101828;      
+  --grey: #475467;
+  --border-light: #DADDE1;      
+  --button: #E44848;     
+  --button-hover: #D84343;
+  --yellow: #FFC531;     
+  --border: rgba(16, 24, 40, 0.2); 
+  
+  --font-family: 'Inter', sans-serif;
+}

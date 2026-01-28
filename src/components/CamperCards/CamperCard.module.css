@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--border-light); /* Наш #DADDE1 */
+  border-radius: 20px;
+  background-color: var(--white);
+}
+
+.image {
+  width: 290px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--main);
+}
+
+.tag {
+  background-color: var(--bg-light); /* Наш #F2F4F7 */
+  padding: 12px 18px;
+  border-radius: 100px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
