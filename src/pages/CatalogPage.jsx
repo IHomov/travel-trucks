@@ -4,6 +4,8 @@ import {fetchCampers} from '../redux/campersOps';
 import CamperCard from '../components/CamperCards/CamperCard';
 import s from './CatalogPage.module.css';
 import { useEffect } from 'react';
+import Filters from '../components/Filters/Filters';
+
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -21,16 +23,7 @@ const CatalogPage = () => {
         
         {/* ЛІВА ЧАСТИНА: Фільтри */}
         <aside className={s.sidebar}>
-          {/* Тут буде компонент Filters (Локація, Тип, Обладнання) */}
-          <div className={s.locationWrapper}>
-            <label className={s.label}>Location</label>
-            <input type="text" placeholder="City, Country" className={s.locationInput} />
-          </div>
-          
-          <div className={s.filtersGroup}>
-            <p className={s.filtersTitle}>Filters</p>
-            {/* Сюди згодом додамо іконки обладнання */}
-          </div>
+          <Filters />
         </aside>
 
         {/* ПРАВА ЧАСТИНА: Список карток */}

@@ -1,3 +1,17 @@
+
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
+}
 .card {
   display: flex;
   gap: 24px;
@@ -25,7 +39,150 @@
   padding: 12px 18px;
   border-radius: 100px;
   font-size: 16px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
 }
+
+.tag svg  {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+ fill: none;              
+  stroke: currentColor; 
+}
+
+
+.featureIcon {
+  width: 20px;
+  height: 20px;
+  stroke: #101828; 
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+}
+
+
+.iconStar {
+  fill: #FFC107;
+  stroke: #FFC107;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+
+.priceBox {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Відстань між ціною і серцем */
+}
+
+/* Блок з рейтингом та локацією */
+.stats {
+  display: flex;
+  gap: 16px; /* Відстань між (зірка+відгуки) та (маркер+локація) */
+  margin-bottom: 24px;
+}
+
+/* Спільний стиль для контейнерів зірок та локації */
+.ratingBox, .locationBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Контейнер для характеристик (тегів) */
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.btnMain {
+  display: block; /* Гарантує, що кнопка веде себе як окремий блок */
+  background-color: var(--button-red); 
+  color: #ffffff;
+  padding: 16px 40px;
+  border-radius: 200px;
+  border: none;
+  margin-top: auto; /* Це "виштовхне" кнопку до низу картки, як на макеті */
+  width: fit-content; 
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btnMain:hover {
+  background-color: var(--button-hover);
+}
+.heartBtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none; /* ПРИБИРАЄ ЧОРНИЙ КОНТУР ПРИ НАТИСКАННІ */
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  transition: transform 0.2s ease;
+}
+
+.heartBtn:focus {
+  outline: none; /* Додатковий захист від контуру */
+}
+
+.heartIcon {
+  fill: #101828; /* Колір за замовчуванням */
+  transition: fill 0.3s ease;
+}
+
+/* Назва має бути .active, щоб збігатися з {s.active} у JSX */
+.active {
+  fill: #E44848 !important; /* Додаємо !important, якщо колір перебивається спрайтом */
+}
+
+.iconStar {
+  width: 16px;
+  height: 16px;
+  fill: #FFC107; /* Яскравіший жовтий з макета */
+  /* Додаємо stroke на випадок, якщо іконка в спрайті контурна */
+  stroke: #FFC107; 
+  flex-shrink: 0;
+}
+
+.ratingText {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  text-decoration: underline; /* Підкреслення як у макеті */
+  margin-left: 4px;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+}
+
