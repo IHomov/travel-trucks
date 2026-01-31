@@ -1,31 +1,46 @@
+/* Основний контейнер сторінки */
 .section {
-  margin-top: 48px;
-}
-.gallery {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 28px;
-  overflow-x: auto; /* На випадок, якщо картинок багато */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 64px;
 }
 
-.galleryImage {
-  width: 290px;
-  height: 310px;
-  object-fit: cover;
-  border-radius: 10px;
+/* Хедер: назва, рейтинг+локація, ціна */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 28px;
 }
-.description {
-  margin-top: 24px;
-  margin-bottom: 44px;
-  line-height: 1.5;
-  color: #475467;
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 8px 0; /* 8px до рейтингу */
+}
+
+.meta {
+  margin-bottom: 16px; /* 16px до ціни */
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Відстань між рейтингом і локацією */
+}
+
+.ratingBox,
+.locationBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .iconStar {
   width: 16px;
   height: 16px;
-  fill: #ffc107; /* Яскравіший жовтий з макета */
-  /* Додаємо stroke на випадок, якщо іконка в спрайті контурна */
+  fill: #ffc107;
   stroke: #ffc107;
   flex-shrink: 0;
 }
@@ -34,23 +49,7 @@
   font-size: 16px;
   line-height: 1.5;
   color: #101828;
-  text-decoration: underline; /* Підкреслення як у макеті */
-  margin-left: 4px;
-}
-
-.ratingBox {
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-
-.ratingBox,
-.locationBox {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  gap: 4px;
-  margin-top: 8px;
+  text-decoration: underline;
 }
 
 .price {
@@ -62,26 +61,93 @@
   margin: 0;
 }
 
-.header {
+/* Галерея */
+.gallery {
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 100%;
+  gap: 16px;
   margin-bottom: 28px;
 }
-.name {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.2;
-  margin-bottom: 0;
+
+.galleryImage {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.meta {
-  margin-bottom: 16px; /* Відступ 16px до ціни */
+/* Опис */
+.description {
+  margin-top: 24px;
+  margin-bottom: 44px;
+  line-height: 1.5;
+  color: #475467;
+  max-width: 100%;
 }
 
-.stats {
+/* ДВОКОЛОНКОВА СТРУКТУРА ПІД ОПИСОМ */
+.mainContent {
   display: flex;
-  align-items: center;
-  gap: 16px; /* Відстань між рейтингом і локацією на одній лінії */
+  align-items: flex-start;
+  gap: 40px; /* Проміжок між контентом та формою */
+}
+
+.infoSide {
+  flex: 1; /* Ліва частина (Features/Reviews) займає весь вільний простір */
+}
+
+.formSide {
+  width: 448px; /* Фіксована ширина форми з макета */
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px; /* Форма буде залишатися на екрані при скролі відгуків */
+}
+
+/* Таби (кнопки) */
+.tabsList {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  margin-bottom: 44px;
+}
+
+.tabBtn {
+  
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: #101828;
+
+}
+.tabBtn:focus {
+  outline: none;
+}
+
+.tabBtn.active::after {
+  border: none;
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #E44848;
+  
+}
+
+/* Адаптивність для планшетів */
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formSide {
+   margin-top: auto;
+    width: 100%;
+    max-width: 448px;
+  }
 }

@@ -97,7 +97,7 @@ const CamperCard = ({ camper }) => {
         <div className={s.categories}>
           {features.map((feature) => (
             <span key={feature.id} className={s.tag}>
-              <svg className={s.featureIcon} width="20" height="20">
+              <svg className={s.featureIcon} >
                 <use href={`/sprite.svg#${feature.icon}`}></use>
               </svg>
               {feature.label}

@@ -1,0 +1,84 @@
+.bookingForm {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.formText {
+  color: #475467;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.inputsGap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+ 
+}
+
+.bookingForm input,
+.commentArea {
+  width: 100%;
+  padding: 18px;
+  background-color: #F7F7F7;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  box-sizing: border-box; /* Рятує від вилізання за межі */
+  font-size: 16px;
+  outline: none;
+   color: var(--main);
+}
+
+.commentArea {
+  min-height: 114px;
+  resize: none;
+}
+
+.bookingForm input:focus,
+.commentArea:focus {
+  border-color: #E44848;
+}
+
+.submitBtn {
+  margin-top: 24px;
+  padding: 16px 60px;
+  background-color: #E44848;
+  color: white;
+  border: none;
+  border-radius: 200px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: 0.3s;
+}
+
+.submitBtn:hover {
+  background-color: #D84343;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  /* Можна додати свою іконку через filter, якщо вона має бути іншого кольору */
+  filter: invert(30%) sepia(10%) saturate(500%) hue-rotate(180deg) brightness(90%) contrast(90%);
+  opacity: 0.6;
+}
+
+.dateInput::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Прибираємо стандартний вигляд на мобільних пристроях */
+.dateInput {
+  appearance: none;
+  -webkit-appearance: none;
+}

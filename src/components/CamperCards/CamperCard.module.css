@@ -48,16 +48,19 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
- fill: none;              
-  stroke: currentColor; 
+
+ fill: #101828;              
+  stroke: none; 
 }
 
 
 .featureIcon {
   width: 20px;
   height: 20px;
-  stroke: #101828; 
+
+ 
 }
+
 
 .content {
   display: flex;
