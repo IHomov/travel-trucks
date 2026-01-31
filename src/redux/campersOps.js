@@ -16,3 +16,15 @@ export const fetchCampers = createAsyncThunk(
   },
 );
 
+// Операція для отримання одного кемпера за ID
+export const fetchCamperById = createAsyncThunk(
+  "campers/fetchById",
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.get(`/campers/${id}`);
+      return response.data; // MockAPI поверне об'єкт однієї машини
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

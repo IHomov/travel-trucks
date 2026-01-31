@@ -1,6 +1,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import s from "./CamperCard.module.css";
+import { Link } from "react-router-dom";
 
 const CamperCard = ({ camper }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -104,7 +105,7 @@ const CamperCard = ({ camper }) => {
           ))}
         </div>
 
-        <button className={s.btnMain}>Show more</button>
+        <Link to={`/catalog/${camper.id}`} className={s.btnMain}>Show more</Link>
       </div>
     </div>
   );
