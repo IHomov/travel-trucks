@@ -10,7 +10,7 @@ export const fetchCampers = createAsyncThunk(
       const state = thunkAPI.getState();
       const filters =
         Object.keys(filtersArg).length > 0 ? filtersArg : state.filters;
-      const { location, form, features } = state.filters;
+      const { location, form, features } = filters;
 
       const params = new URLSearchParams();
       params.append("page", page);
@@ -28,6 +28,8 @@ export const fetchCampers = createAsyncThunk(
         features.forEach((feature) => {
           if (feature === "automatic") {
             params.append("transmission", "automatic");
+          } else if (feature === "TV" || feature === "AC") {
+            params.append(feature, 1);
           } else {
             params.append(feature.toLowerCase(), true);
           }
