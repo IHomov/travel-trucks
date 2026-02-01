@@ -21,13 +21,12 @@ const campersSlice = createSlice({
       state.page += 1;
     },
     resetItems: (state) => {
-      state.items = [],
-      state.page = 1;
+      ((state.items = []), (state.page = 1));
     },
   },
   extraReducers: (builder) => {
     builder
-      // Завантаження всіх кемперів
+
       .addCase(fetchCampers.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -37,10 +36,9 @@ const campersSlice = createSlice({
         const newItems =
           action.payload.items ||
           (Array.isArray(action.payload) ? action.payload : []);
-        // Створюємо карту існуючих ID для швидкої перевірки
+
         const existingIds = state.items.map((item) => item.id);
 
-        // Фільтруємо нові елементи, залишаючи лише ті, яких ще немає в стейті
         const uniqueNewItems = newItems.filter(
           (item) => !existingIds.includes(item.id),
         );
@@ -53,7 +51,7 @@ const campersSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-      // Завантаження одного кемпера за ID
+
       .addCase(fetchCamperById.pending, (state) => {
         state.isLoading = true;
         state.currentCamper = null;

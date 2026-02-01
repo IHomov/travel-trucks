@@ -1,26 +1,23 @@
 .hero {
-  /* Шлях до твого фото, яке ти завантажила в assets */
-  background-image: linear-gradient(rgba(16, 24, 40, 0.4), rgba(16, 24, 40, 0.4)), 
-                    url('../assets/Heroimg.jpg');
+  background-image:
+    linear-gradient(rgba(16, 24, 40, 0.4), rgba(16, 24, 40, 0.4)),
+    url("../assets/Heroimg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 100%; 
+  width: 100%;
   height: 696px;
   display: flex;
   align-items: center;
   padding-left: 64px;
 }
 .container {
-  /* Обмежуємо ширину як у макеті */
   width: 100%;
-  max-width: 1440px; 
-  
-  /* Цей рядок поставить контейнер по центру екрану */
-  margin: 0 auto; 
-  
-  /* Відступ зліва для тексту, щоб він не прилипав до краю 1440px */
-  padding: 0 64px; 
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  padding: 0 64px;
 }
 .title {
   color: var(--white);

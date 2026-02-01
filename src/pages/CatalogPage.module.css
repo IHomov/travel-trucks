@@ -7,26 +7,26 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 64px;
-  display: flex; /* Робимо дві колонки поруч */
-  gap: 64px;    /* Відстань між фільтрами та картками */
+  display: flex; 
+  gap: 64px;    
 }
 
 .sidebar {
-  width: 360px; /* Ширина панелі фільтрів за макетом */
+  width: 360px; 
   flex-shrink: 0;
 }
 
 .content {
-  flex-grow: 1; /* Список карток займає весь вільний простір */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центруємо кнопку Load More */
+  align-items: center; 
 }
 
 .cardList {
   display: flex;
   flex-direction: column;
-  gap: 32px; /* Відстань між картками */
+  gap: 32px; 
   width: 100%;
   margin-bottom: 40px;
 }
@@ -40,7 +40,7 @@
 .locationInput {
   width: 100%;
   padding: 18px;
-  background-color: var(--inputs); /* Твій #F7F7F7 */
+  background-color: var(--inputs); 
   border: none;
   border-radius: 12px;
   font-size: 16px;
@@ -51,7 +51,7 @@
   margin: 0 auto;
   padding: 16px 32px;
   background: transparent;
-  border: 1px solid var(--border-light); /* Твій #DADDE1 */
+  border: 1px solid var(--border-light); 
   border-radius: 200px;
   color: var(--main);
   font-weight: 500;
@@ -60,5 +60,5 @@
 }
 
 .loadMoreBtn:hover {
-  border-color: var(--button); /* Червоний при наведенні */
+  border-color: var(--button); 
 }

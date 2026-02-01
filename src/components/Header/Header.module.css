@@ -1,23 +1,29 @@
 .header {
   width: 100%;
-  height: 72px; /* Стандартна висота для хедерів у таких макетах */
-  background-color: var(--white);
-  border-bottom: 1px solid var(--border-light); /* Той самий #DADDE1 */
+  height: 72px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e2e2e2;
   display: flex;
   align-items: center;
-  position: sticky; /* Щоб хедер залишався зверху при скролі */
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .nav {
-  width: 100%;
-  max-width: 1440px; /* Адаптуй під ширину свого макету */
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  height: 72px;
+  width: 100%;
+  position: relative;
+}
+
+.nav::after {
+  content: "";
+  flex: 1;
 }
 
 .logo {
@@ -25,15 +31,19 @@
   font-weight: 600;
   color: var(--main);
   text-decoration: none;
+  z-index: 5;
 }
 
 .logoAccent {
-  color: var(--button); /* Червоний колір для "Trucks" */
+  color: var(--button);
 }
 
 .menu {
   display: flex;
-  gap: 32px; /* Відстань між Home та Catalog */
+  gap: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .link {
@@ -48,16 +58,14 @@
   color: var(--button);
 }
 
-/* Стиль для активного посилання (коли ми на цій сторінці) */
 .active {
   color: var(--button);
   font-weight: 600;
   position: relative;
 }
 
-/* Можна додати маленьку крапку або лінію під активним пунктом, якщо є в макеті */
 .active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;

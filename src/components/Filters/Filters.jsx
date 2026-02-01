@@ -1,18 +1,28 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import s from "./Filters.module.css";
-import { fetchCampers } from "../../redux/campersOps";
 import { setForm, setLocation, toggleFeature } from "../../redux/filtersSlice";
 import { resetPage } from "../../redux/campersSlice";
 
 const Filters = () => {
   const dispatch = useDispatch();
-
- // Filters.jsx
-const { location, form, features = [] } = useSelector((state) => state.filters || {});
+  const [, setSerchParams] = useSearchParams();
+  
+  const {
+    location,
+    form,
+    features = [],
+  } = useSelector((state) => state.filters || {});
 
   const handleSearch = () => {
+    const params = {};
+    if (location) params.location = location;
+    if (form) params.form = form;
+    if (features.length > 0) params.features = features.join(",");
+    setSerchParams(params);
+
     dispatch(resetPage());
-    dispatch(fetchCampers({page: 1}));
+    
   };
   return (
     <aside className={s.sidebar}>
@@ -23,8 +33,13 @@ const { location, form, features = [] } = useSelector((state) => state.filters |
           <svg className={s.iconMap} width="20" height="20">
             <use href="/sprite.svg#icon-Map"></use>
           </svg>
-          <input type="text" placeholder="City, Country" className={s.input} value={location} 
-          onChange={(e) => dispatch(setLocation(e.target.value))}/>
+          <input
+            type="text"
+            placeholder="City, Country"
+            className={s.input}
+            value={location}
+            onChange={(e) => dispatch(setLocation(e.target.value))}
+          />
         </div>
       </div>
 
@@ -36,20 +51,24 @@ const { location, form, features = [] } = useSelector((state) => state.filters |
         <div className={s.divider}></div>
         <div className={s.grid}>
           {[
-            { id: "AC", label: "AC" },
-            { id: "automatic", label: "Automatic" },
-            { id: "kitchen", label: "Kitchen", icon: "Cup" }, // Мапимо "Cup" на "kitchen" для API
-            { id: "TV", label: "TV" },
-            { id: "bathroom", label: "Bathroom" },
+            { id: "ac", label: "AC", icon: "ac" }, 
+            { id: "automatic", label: "Automatic", icon: "automatic" },
+            { id: "kitchen", label: "Kitchen", icon: "cup" },
+            { id: "tv", label: "TV", icon: "tv" },
+            { id: "bathroom", label: "Bathroom", icon: "bathroom" },
+            { id: "petrol", label: "Petrol", icon: "petrol" },
+            { id: "water", label: "Water", icon: "water" },
+            { id: "gas", label: "Gas", icon: "gas" },
+            { id: "radio", label: "Radio", icon: "radio" },
+            { id: "refrigerator", label: "Fridge", icon: "fridge" },
           ].map((item) => (
             <button
               key={item.id}
               type="button"
-              // Додаємо клас active, якщо фіча обрана
               className={`${s.filterItem} ${features.includes(item.id) ? s.selected : ""}`}
               onClick={() => dispatch(toggleFeature(item.id))}
             >
-              <svg width="32" height="32">
+              <svg width="32" height="32" className={s.filterIcon}>
                 <use href={`/sprite.svg#icon-${item.icon || item.label}`}></use>
               </svg>
               <span>{item.label}</span>
@@ -64,14 +83,18 @@ const { location, form, features = [] } = useSelector((state) => state.filters |
         <div className={s.divider}></div>
         <div className={s.grid}>
           {[
-            { id: "panelTruck", label: "Van", icon: "Van" },
-            { id: "fullyIntegrated", label: "Fully-Integrated", icon: "Fully-Integrated" },
-            { id: "alcove", label: "Alcove", icon: "Alcove" },
+            { id: "panelTruck", label: "Van", icon: "van" },
+            {
+              id: "fullyIntegrated",
+              label: "Fully-Integrated",
+              icon: "Fully-Integrated",
+            },
+            { id: "alcove", label: "Alcove", icon: "alcove" },
           ].map((item) => (
             <button
               key={item.id}
               type="button"
-              // Додаємо клас active, якщо цей тип кузова обраний
+             
               className={`${s.filterItem} ${form === item.id ? s.selected : ""}`}
               onClick={() => dispatch(setForm(item.id))}
             >

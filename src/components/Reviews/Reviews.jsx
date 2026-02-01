@@ -1,4 +1,4 @@
-import s from './Reviews.module.css';
+import s from "./Reviews.module.css";
 
 const Reviews = ({ reviews }) => {
   if (!reviews || reviews.length === 0) return <p>No reviews yet.</p>;
@@ -12,9 +12,13 @@ const Reviews = ({ reviews }) => {
             <div>
               <p className={s.userName}>{rev.reviewer_name}</p>
               <div className={s.stars}>
-                {/* Малюємо 5 зірок, зафарбовуємо тільки рейтинг */}
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className={i < rev.reviewer_rating ? s.starFull : s.starEmpty}>
+                  <svg
+                    key={i}
+                    className={
+                      i < rev.reviewer_rating ? s.starFull : s.starEmpty
+                    }
+                  >
                     <use href="/sprite.svg#icon-Rating"></use>
                   </svg>
                 ))}

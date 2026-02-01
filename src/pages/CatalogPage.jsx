@@ -6,6 +6,8 @@ import s from './CatalogPage.module.css';
 import { useEffect } from 'react';
 import Filters from '../components/Filters/Filters';
 import { incrementPage, resetItems } from '../redux/campersSlice';
+import { useSearchParams } from 'react-router-dom';
+import { setFilters } from '../redux/filtersSlice';
 
 
 const CatalogPage = () => {
@@ -15,10 +17,19 @@ const CatalogPage = () => {
   const page = useSelector((state) => state.campers.page);
   const isLoading = useSelector(state => state.campers.isLoading);
   const error = useSelector(state => state.campers.error);
+  const [searchParams] = useSearchParams();
   useEffect(() => {
+    const params = {
+    location: searchParams.get('location') || '',
+    form: searchParams.get('form') || '',
+    features: searchParams.get('features')?.split(',').filter(Boolean) || [],
+  };
+
+  
+  dispatch(setFilters(params));
     dispatch(resetItems());
-    dispatch(fetchCampers({page: 1, limit: 4}));
-  }, [dispatch]);
+    dispatch(fetchCampers({page: 1, limit: 4, ...params}));
+  }, [searchParams, dispatch]);
 
   const handleLoadMore= () => {
     const nextPage = page +1;
@@ -30,7 +41,7 @@ const canLoadMore = campers.length < total;
     <div className={s.catalogPage}>
       <div className={s.container}>
         
-        {/* ЛІВА ЧАСТИНА: Фільтри */}
+       
         <aside className={s.sidebar}>
           <Filters />
         </aside>
@@ -38,7 +49,9 @@ const canLoadMore = campers.length < total;
         
         <main className={s.content}>
           {isLoading && <p className={s.message}>Loading campers...</p>}
-          {error && <p className={s.error}>Error: {error}</p>}
+         {error && !error.includes("404") && (
+  <p className={s.error}>Something went wrong: {error}</p>
+)}
 
           <div className={s.cardList}>
             

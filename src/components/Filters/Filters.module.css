@@ -104,25 +104,27 @@
   cursor: pointer;
 }
 
-.filterItem svg {
+
+.filterItem svg{
+   flex-shrink: 0;
   fill: #101828;
+  stroke: currentColor;
   transition: fill 0.3s ease;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
-/* Ефект при наведенні або активному стані */
 .filterItem:hover {
   border-color: #e44848;
 }
 .filterItem:focus {
-  border-color: #101828; /* Ось твоя чорна рамка, яка зараз заважає */
+  border-color: #E44848;
+  outline: none;
 }
+
 .filterItem.selected {
-  border-color: #E44848 !important; 
+  border-color: #E44848; 
 }
-.filterItem.іelected:focus {
-  border-color: #E44848 !important;
+.filterItem.selected:focus {
+  border-color: #E44848;
 }
 
 .filterItem span {
@@ -132,7 +134,6 @@
   text-align: center;
   font-weight: 500;
   line-height: 1.25;
-  color: #101828; /* Явно задаємо чорний колір */
+  color: #101828; 
   text-align: center;
-  word-wrap: break-word; /* Для довгих слів як Fully-Integrated */
-}
+  word-wrap: break-word; 

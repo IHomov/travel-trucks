@@ -16,15 +16,15 @@
 .userHeader {
   display: flex;
   align-items: center;
-  gap: 16px; /* Відступ між аватаркою та блоком (Ім'я + Зірки) */
+  gap: 16px;
 }
 
 .avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #F2F4F7;
-  color: #E44848;
+  background: #f2f4f7;
+  color: #e44848;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,24 +38,23 @@
   font-size: 18px;
   line-height: 1.33;
   color: #101828;
-  margin: 0 0 4px 0; /* 4px відступ вниз до зірок */
+  margin: 0 0 4px 0;
 }
-
 .stars {
   display: flex;
-  gap: 4px; /* Відступ між зірочками */
+  gap: 4px;
 }
 
 .starFull {
   width: 16px;
   height: 16px;
-  fill: #FFC107;
+  fill: #ffc107;
 }
 
 .starEmpty {
   width: 16px;
   height: 16px;
-  fill: #F2F4F7; /* Сіра зірка для рейтингу, якого не вистачає */
+  fill: #f2f4f7;
 }
 
 .comment {

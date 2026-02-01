@@ -1,7 +1,6 @@
 import s from "./Features.module.css";
 
 const Features = ({ camper }) => {
-  // Масив категорій, які ми хочемо відобразити іконками
   const badges = [
     {
       id: "transmission",
@@ -36,15 +35,11 @@ const Features = ({ camper }) => {
       value: camper.bathroom,
       icon: "icon-Bathroom",
     },
-    { id: "water", 
-        label: "Water",
-         value: camper.water, 
-         icon: "icon-water" },
+    { id: "water", label: "Water", value: camper.water, icon: "icon-water" },
   ];
 
   return (
     <div className={s.container}>
-      {/* Списочок іконок (Badges) */}
       <ul className={s.badgeList}>
         {badges.map((item) =>
           item.value ? (
@@ -58,7 +53,6 @@ const Features = ({ camper }) => {
         )}
       </ul>
 
-      {/* Технічні деталі (Vehicle details) */}
       <h3 className={s.title}>Vehicle details</h3>
       <ul className={s.detailsList}>
         <li className={s.detailsItem}>

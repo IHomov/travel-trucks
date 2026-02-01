@@ -4,15 +4,15 @@ const filtersSlice = createSlice({
   name: 'filters',
   initialState: {
     location: '',
-    form: '',      // тип кузова (один варіант)
-    features: [],  // напр. ['AC', 'kitchen', 'TV'] (декілька варіантів)
+    form: '',      
+    features: [],  
   },
   reducers: {
     setLocation(state, action) {
       state.location = action.payload;
     },
     setForm(state, action) {
-      state.form = action.payload;
+      state.form = state.form === action.payload ? '' : action.payload;
     },
     toggleFeature(state, action) {
       const feature = action.payload;
@@ -22,6 +22,11 @@ const filtersSlice = createSlice({
         state.features.push(feature);
       }
     },
+    setFilters(state, action) {
+      state.location = action.payload.location || '';
+      state.form = action.payload.form || '';
+      state.features = action.payload.features || [];
+    },
     resetFilters(state) {
       state.location = '';
       state.form = '';
@@ -30,5 +35,5 @@ const filtersSlice = createSlice({
   },
 });
 
-export const { setLocation, setForm, toggleFeature, resetFilters } = filtersSlice.actions;
+export const { setLocation, setForm, toggleFeature, resetFilters, setFilters } = filtersSlice.actions;
 export default filtersSlice.reducer;
