@@ -50,3 +50,52 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
+# TravelTrucks - Camper Rental Service
+
+A modern web application for discovering and booking camper vans. The project features a catalog of campers with detailed descriptions, equipment filters, and a booking system.
+
+## 🚀 Key Features
+- **Camper Catalog**: View a list of available campers with pagination.
+- **Advanced Filtering**: Filter by location, vehicle type, and equipment (AC, Kitchen, TV, etc.).
+- **Favorites System**: Save your favorite campers for quick access.
+- **Booking Form**: Integrated form for reserving campers with date selection and validation.
+- **Detailed View**: Detailed specifications, features, and user reviews for each camper.
+
+## 🛠️ Tech Stack
+- **Frontend**: React 19 (Vite)
+- **State Management**: Redux Toolkit (React-Redux)
+- **Data Fetching**: Axios
+- **Forms & Validation**: Formik / React Hook Form
+- **Routing**: React Router 7
+- **Date Picking**: React Datepicker
+- **Notifications**: React Hot Toast
+- **Backend API**: Mockapi.io
+
+## 📦 Installation & Setup
+
+Follow these steps to get the project running locally:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [your-repository-link]
+2. **Navigate to the project folder:**
+cd travel-trucks
+3. **Install dependencies:**
+npm install
+4. **Start the development server:**
+npm run dev
+5. **Open the app: Navigate to http://localhost:5173 in your browser.**
+Project Notes
+API Filtering: This project uses a MockAPI backend. Note that equipment filters (e.g., TV, AC) are case-sensitive to match the database schema.
+
+Scripts:
+
+npm run build: Build the project for production.
+
+npm run lint: Run ESLint to check for code quality.
+
+Developed as a technical task for the TravelTrucks service.
+
+
+   
+
