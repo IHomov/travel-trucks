@@ -4,19 +4,29 @@ import s from "./Header.module.css";
 export const Header = () => {
   return (
     <header className={s.header}>
+      <div className="container">
       <nav className={s.nav}>
         <Link to="/" className={s.logo}>
-          Travel<span className={s.logoAccent}>Trucks</span>
+          <svg className={s.logoSvg}>
+            <use href="/sprite.svg#icon-logo" />
+          </svg>
         </Link>
         <div className={s.menu}>
-          <NavLink to="/" className={({isActive}) => isActive ? s.active : s.link}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? s.active : s.link)}
+          >
             Home
           </NavLink>
-          <NavLink to="/catalog" className={({isActive}) => isActive ? s.active : s.link}>
+          <NavLink
+            to="/catalog"
+            className={({ isActive }) => (isActive ? s.active : s.link)}
+          >
             Catalog
           </NavLink>
         </div>
       </nav>
+      </div>
     </header>
   );
 };

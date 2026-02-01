@@ -10,7 +10,7 @@
 .reviewItem {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Відступ між заголовком відгуку та текстом коментаря */
+  gap: 16px;
 }
 
 .userHeader {
@@ -23,21 +23,22 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #f2f4f7;
-  color: #e44848;
+  background: var(--bg-light);
+  color: var(--button);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   font-weight: 600;
   flex-shrink: 0;
+  text-transform: uppercase;
 }
 
 .userName {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
-  color: #101828;
+  color: var(--main);
   margin: 0 0 4px 0;
 }
 .stars {
@@ -48,18 +49,18 @@
 .starFull {
   width: 16px;
   height: 16px;
-  fill: #ffc107;
+  fill: var(--yellow);
 }
 
 .starEmpty {
   width: 16px;
   height: 16px;
-  fill: #f2f4f7;
+  fill: var(--bg-light);
 }
 
 .comment {
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
+  color: var(--grey);
   margin: 0;
 }

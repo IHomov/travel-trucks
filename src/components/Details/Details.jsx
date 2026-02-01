@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCamperById } from "../../redux/campersOps";
 import Loader from "../Loader/Loader";
+import { formatPrice } from "../../utils/formatPrice";
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const DetailsPage = () => {
           <div className={s.stats}>
             <div className={s.ratingBox}>
               <svg width="16" height="16" className={s.iconStar}>
-                <use href="/sprite.svg#icon-Rating"></use>
+                <use href="/sprite.svg#icon-rating"></use>
               </svg>
               <span className={s.ratingText}>
                 {camper?.rating} ({camper?.reviews?.length} Reviews)
@@ -38,13 +39,14 @@ const DetailsPage = () => {
             </div>
             <div className={s.locationBox}>
               <svg width="16" height="16" className={s.iconMap}>
-                <use href="/sprite.svg#icon-Map"></use>
+                <use href="/sprite.svg#icon-map"></use>
               </svg>
               <span className={s.locationText}>{camper?.location}</span>
             </div>
           </div>
         </div>
-        <p className={s.price}>€{camper.price.toFixed(2)}</p>
+        
+        <p className={s.price}>{formatPrice(camper.price)}</p>
       </div>
 
       <div className={s.gallery}>

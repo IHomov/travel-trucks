@@ -1,7 +1,7 @@
 .description {
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
+  color: var(--grey);
   display: -webkit-box;
   -webkit-line-clamp: 1;
   line-clamp: 1;
@@ -46,11 +46,9 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  fill: #10100f;
+  fill: var(--main);
   stroke: currentColor;
 }
-
-
 
 .featureIcon {
   width: 20px;
@@ -64,8 +62,8 @@
 }
 
 .iconStar {
-  fill: #ffc107;
-  stroke: #ffc107;
+  fill: var(--yellow);
+  stroke: var(--yellow);
 }
 
 .header {
@@ -80,7 +78,7 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
-  color: #101828;
+  color: var(--main);;
 }
 
 .priceBox {
@@ -88,7 +86,12 @@
   align-items: center;
   gap: 12px; 
 }
-
+.price{
+font-weight: 600;
+font-size: 24px;
+line-height: 1.33;
+color: var(--main);
+}
 
 .stats {
   display: flex;
@@ -119,7 +122,7 @@
 .btnMain {
   display: block; 
   background-color: var(--button-red);
-  color: #ffffff;
+  color: var(--white);
   padding: 16px 40px;
   border-radius: 200px;
   border: none;
@@ -132,6 +135,9 @@
 
 .btnMain:hover {
   background-color: var(--button-hover);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+  color:var(--white);
 }
 .heartBtn {
   background: transparent;
@@ -150,28 +156,28 @@
 }
 
 .heartIcon {
-  fill: #101828; 
+  fill: var(--main);; 
   transition: fill 0.3s ease;
 }
 
 
 .active {
-  fill: #e44848 !important; 
+  fill: var(--button) !important; 
 }
 
 .iconStar {
   width: 16px;
   height: 16px;
-  fill: #ffc107; 
+  fill: var(--yellow);; 
   
-  stroke: #ffc107;
+  stroke: var(--yellow);;
   flex-shrink: 0;
 }
 
 .ratingText {
   font-size: 16px;
   line-height: 1.5;
-  color: #101828;
+  color: var(--main);
   text-decoration: underline; 
   margin-left: 4px;
 }
@@ -179,4 +185,11 @@
 .ratingBox {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+  }
 }

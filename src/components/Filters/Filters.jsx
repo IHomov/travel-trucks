@@ -26,12 +26,11 @@ const Filters = () => {
   };
   return (
     <aside className={s.sidebar}>
-      {/* Блок локації */}
-      <div className={s.locationSection}>
+        <div className={s.locationSection}>
         <label className={s.label}>Location</label>
         <div className={s.inputWrapper}>
           <svg className={s.iconMap} width="20" height="20">
-            <use href="/sprite.svg#icon-Map"></use>
+            <use href="/sprite.svg#icon-map"></use>
           </svg>
           <input
             type="text"
@@ -87,7 +86,7 @@ const Filters = () => {
             {
               id: "fullyIntegrated",
               label: "Fully-Integrated",
-              icon: "Fully-Integrated",
+              icon: "fully-integrated",
             },
             { id: "alcove", label: "Alcove", icon: "alcove" },
           ].map((item) => (

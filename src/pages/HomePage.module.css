@@ -9,31 +9,30 @@
   height: 696px;
   display: flex;
   align-items: center;
-  padding-left: 64px;
+  /* padding-left: 64px; */
 }
-.container {
+.heroContainer {
   width: 100%;
   max-width: 1440px;
-
   margin: 0 auto;
-
   padding: 0 64px;
 }
 .title {
-  color: var(--white);
+  color: var(--inputs);
   font-size: 48px;
   font-weight: 600;
   line-height: 1.1;
-  max-width: 500px;
+  max-width: 571px;
   margin-bottom: 16px;
 }
 
 .subtitle {
-  color: var(--white);
+  color:  var(--inputs);
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.33;
   margin-bottom: 40px;
+  max-width: 550px;
 }
 
 .button {
@@ -47,6 +46,11 @@
   transition: background-color 0.3s ease;
 }
 
-.button:hover {
+
+
+.button:hover{
   background-color: var(--button-hover);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+  color: var(--white);
 }

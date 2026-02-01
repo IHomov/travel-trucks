@@ -19,7 +19,7 @@ const Reviews = ({ reviews }) => {
                       i < rev.reviewer_rating ? s.starFull : s.starEmpty
                     }
                   >
-                    <use href="/sprite.svg#icon-Rating"></use>
+                    <use href="/sprite.svg#icon-rating"></use>
                   </svg>
                 ))}
               </div>

@@ -1,9 +1,8 @@
 .header {
   width: 100%;
   height: 72px;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #e2e2e2;
-  display: flex;
+  background-color: var(--inputs);
+  border-bottom: 1px solid var(--border-linie);
   align-items: center;
   position: sticky;
   top: 0;
@@ -11,9 +10,6 @@
 }
 
 .nav {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 64px;
   display: flex;
   align-items: center;
   height: 72px;
@@ -27,17 +23,17 @@
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--main);
-  text-decoration: none;
-  z-index: 5;
-}
+  display: flex;
+  align-items: center;
+ }
 
-.logoAccent {
-  color: var(--button);
-}
 
+.logoSvg {
+  width: 136px; 
+  height: 15px;  
+ 
+  
+}
 .menu {
   display: flex;
   gap: 32px;
@@ -51,6 +47,7 @@
   font-size: 16px;
   color: var(--main);
   text-decoration: none;
+  line-height: 1.5;
   transition: color 0.3s ease;
 }
 

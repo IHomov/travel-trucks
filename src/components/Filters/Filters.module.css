@@ -32,7 +32,7 @@
   top: 50%;
   transform: translateY(-50%);
   fill: none;
-  stroke: #101828;
+  stroke: var(--main);
   pointer-events: none;
 }
 
@@ -41,25 +41,33 @@
   width: 100%;
   height: 56px;
   padding: 18px 18px 14px 48px;
-  background-color: #f7f7f7;
+  background-color: var(--inputs);
   border: none;
   border-radius: 12px;
   font-size: 16px;
-  color: #101828;
+  color: var(--grey);
+  transition: color 0.3s ease;
   outline: none;
 }
 .input::placeholder {
-  color: rgba(16, 24, 40, 0.6);
+  color: var(--grey)
 }
+.input:focus {
+  color: var(--main);
+  outline: none;
+}
+
 .filtersText {
-  color: #475467;
-  margin-bottom: 14px;
+  color: var(--grey);
+  margin-bottom: 32px;
 }
 
 .groupTitle {
   font-weight: 600;
   font-size: 20px;
+  line-height: 1.20;
   margin-bottom: 24px;
+  color: var(--main);
 }
 
 .divider {
@@ -76,8 +84,8 @@
 }
 
 .filterItem {
-  height: 95px;
-  border: 1px solid rgba(16, 24, 40, 0.1);
+  height: 96px;
+  border: 1px solid var(--border-light);
   border-radius: 12px;
   background: transparent;
   display: flex;
@@ -92,9 +100,10 @@
   outline: none;
 }
 
+
 .btnSearch {
-  background-color: #e44848;
-  color: white;
+  background-color: var(--button);
+  color: var(--white);
   padding: 16px 60px;
   border-radius: 200px;
   border: none;
@@ -103,30 +112,46 @@
   margin-top: 32px;
   cursor: pointer;
 }
+.btnSearch:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.btnSearch:active {
+  transform: translateY(0);
+}
 
 
 .filterItem svg{
-   flex-shrink: 0;
-  fill: #101828;
+  flex-shrink: 0;
+  fill: var(--main);
   stroke: currentColor;
+  stroke-width: 0;
   transition: fill 0.3s ease;
+  color: var(--main);
 }
 
 .filterItem:hover {
-  border-color: #e44848;
+  border-color: var(--border-red);
 }
 .filterItem:focus {
-  border-color: #E44848;
+  border-color: var(--border-red);
   outline: none;
 }
 
 .filterItem.selected {
-  border-color: #E44848; 
+  border-color: var(--border-red);
 }
 .filterItem.selected:focus {
-  border-color: #E44848;
+  border-color: var(--border-red);
 }
 
+.filterItem.selected svg,
+.filterItem.selected span {
+  color: var(--border-red);
+  fill: var(--border-red);
+}
 .filterItem span {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -134,7 +159,7 @@
   text-align: center;
   font-weight: 500;
   line-height: 1.25;
-  color: #101828; 
+  color: var(--main); 
   text-align: center;
   word-wrap: break-word; 
 }

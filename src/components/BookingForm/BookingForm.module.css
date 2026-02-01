@@ -1,10 +1,13 @@
 .bookingForm {
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
-  padding: 24px;
-  background-color: #ffffff;
+  padding: 44px;
+  width: 641px;
+  min-height: 588px;
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .formTitle {
@@ -59,10 +62,10 @@
 
 /* Червона кнопка по центру */
 .submitBtn {
-  margin: 24px auto 0; /* Відступ зверху та центрування */
+  margin: 24px auto 0; 
   padding: 16px 60px;
-  background-color: #E44848; /* Червоний колір TravelTrucks */
-  color: #ffffff;
+  background-color: var(--button); /* Червоний колір TravelTrucks */
+  color: var(--white);
   border: none;
   border-radius: 200px;
   font-weight: 500;
@@ -76,7 +79,7 @@
   background-color: #D84343;
 }
 
-/* Текст помилки (абсолютне позиціювання, щоб не рухати кнопку) */
+
 .errorText {
   position: absolute;
   bottom: -16px;
@@ -87,4 +90,14 @@
 
 .inputError {
   outline: 1px solid #E44848;
+}
+
+/* Стилізуємо обгортку календаря */
+.datePickerWrapper {
+  width: 100%;
+}
+
+/* Змушуємо внутрішній інпут DatePicker бути на всю ширину */
+:global(.react-datepicker-wrapper) {
+  width: 100%;
 }

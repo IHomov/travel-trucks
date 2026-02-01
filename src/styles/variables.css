@@ -10,7 +10,9 @@
   --yellow: #FFC531;     
   --border: rgba(16, 24, 40, 0.2); 
   --button-red: #E44848;
-  
+  --border-red:#e44848;
+  --background: #f2f4f7;
+  --border-linie: #e2e2e2;
   
   --font-family: 'Inter', sans-serif;
 }

@@ -2,25 +2,52 @@ import { useState } from "react";
 import clsx from "clsx";
 import s from "./CamperCard.module.css";
 import { Link } from "react-router-dom";
+import { formatPrice } from "../../utils/formatPrice";
 
 const CamperCard = ({ camper }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const features = [
-    {id: "transmission", label: camper.transmission, icon: "icon-automatic", value: true},
-    {id: "engine", label: camper.engine, icon: "icon-petrol", value: true },
+    {
+      id: "transmission",
+      label: camper.transmission,
+      icon: "icon-automatic",
+      value: true,
+    },
+    { id: "engine", label: camper.engine, icon: "icon-petrol", value: true },
     { id: "AC", label: "AC", value: camper.AC, icon: "icon-ac" },
-    {id: "kitchen", label: "Kitchen", value: camper.kitchen, icon: "icon-cup"},
+    {
+      id: "kitchen",
+      label: "Kitchen",
+      value: camper.kitchen,
+      icon: "icon-cup",
+    },
     { id: "TV", label: "TV", value: camper.TV, icon: "icon-tv" },
-    {id: "fridge", label: "Fridge", value: camper.refrigerator, icon: "icon-fridge"},    
-    {id: "microwave", label: "Microwave", value: camper.microwave, icon: "icon-microwave"},
-    { id: "bathroom", label: "Bathroom", value: camper.bathroom, icon: "icon-bathroom"},
+    {
+      id: "fridge",
+      label: "Fridge",
+      value: camper.refrigerator,
+      icon: "icon-fridge",
+    },
+    {
+      id: "microwave",
+      label: "Microwave",
+      value: camper.microwave,
+      icon: "icon-microwave",
+    },
+    {
+      id: "bathroom",
+      label: "Bathroom",
+      value: camper.bathroom,
+      icon: "icon-bathroom",
+    },
     { id: "water", label: "Water", value: camper.water, icon: "icon-water" },
     { id: "radio", label: "Radio", value: camper.radio, icon: "icon-radio" },
     { id: "gas", label: "Gas", value: camper.gas, icon: "icon-gas" },
   ].filter((feature) => feature.value !== false);
 
-  const formatPrice = (price) => `€${price?.toFixed(2)}`;
+ 
+  <p className={s.price}>{formatPrice(camper.price)}</p>
 
   return (
     <div className={s.card}>

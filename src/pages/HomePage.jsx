@@ -4,7 +4,7 @@ import s from "./HomePage.module.css";
 const HomePage = () => {
   return (
     <section className={s.hero}>
-      <div className={s.container}>
+      <div className="container">
         <h1 className={s.title}>Campers of your dreams</h1>
         <p className={s.subtitle}>
           You can find everything you need for your perfect adventure in our catalog

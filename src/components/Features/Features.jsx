@@ -5,18 +5,18 @@ const Features = ({ camper }) => {
     {
       id: "transmission",
       label: camper.transmission,
-      icon: "icon-Automatic",
+      icon: "icon-automatic",
       value: true,
     },
-    { id: "engine", label: camper.engine, icon: "icon-Petrol", value: true },
-    { id: "AC", label: "AC", value: camper.AC, icon: "icon-AC" },
+    { id: "engine", label: camper.engine, icon: "icon-petrol", value: true },
+    { id: "AC", label: "AC", value: camper.AC, icon: "icon-ac" },
     {
       id: "kitchen",
       label: "Kitchen",
       value: camper.kitchen,
       icon: "icon-Cup",
     },
-    { id: "TV", label: "TV", value: camper.TV, icon: "icon-TV" },
+    { id: "TV", label: "TV", value: camper.TV, icon: "icon-tv" },
     {
       id: "fridge",
       label: "Fridge",
@@ -27,13 +27,13 @@ const Features = ({ camper }) => {
       id: "microwave",
       label: "Microwave",
       value: camper.microwave,
-      icon: "icon-Microwave",
+      icon: "icon-microwave",
     },
     {
       id: "bathroom",
       label: "Bathroom",
       value: camper.bathroom,
-      icon: "icon-Bathroom",
+      icon: "icon-bathroom",
     },
     { id: "water", label: "Water", value: camper.water, icon: "icon-water" },
   ];
@@ -44,9 +44,11 @@ const Features = ({ camper }) => {
         {badges.map((item) =>
           item.value ? (
             <li key={item.id} className={s.badgeItem}>
+              <div className={s.badgeIcon}>
               <svg className={s.icon} width="20" height="20">
                 <use href={`/sprite.svg#${item.icon}`}></use>
               </svg>
+              </div>
               <span>{item.label}</span>
             </li>
           ) : null,
@@ -56,22 +58,28 @@ const Features = ({ camper }) => {
       <h3 className={s.title}>Vehicle details</h3>
       <ul className={s.detailsList}>
         <li className={s.detailsItem}>
-          <span>Form</span> <span>{camper.form}</span>
+          <span className={s.detailName}>Form</span>
+          <span className={s.detailValue}>{camper.form}</span>
         </li>
         <li className={s.detailsItem}>
-          <span>Length</span> <span>{camper.length}</span>
+          <span className={s.detailName}>Length</span>
+          <span className={s.detailValue}>{camper.length}</span>
         </li>
         <li className={s.detailsItem}>
-          <span>Width</span> <span>{camper.width}</span>
+          <span className={s.detailName}>Width</span>
+          <span className={s.detailValue}>{camper.width}</span>
         </li>
         <li className={s.detailsItem}>
-          <span>Height</span> <span>{camper.height}</span>
+          <span className={s.detailName}>Height</span>
+          <span className={s.detailValue}>{camper.height}</span>
         </li>
         <li className={s.detailsItem}>
-          <span>Tank</span> <span>{camper.tank}</span>
+          <span className={s.detailName}>Tank</span>
+          <span className={s.detailValue}>{camper.tank}</span>
         </li>
         <li className={s.detailsItem}>
-          <span>Consumption</span> <span>{camper.consumption}</span>
+          <span className={s.detailName}>Consumption</span>
+          <span className={s.detailValue}>{camper.consumption}</span>
         </li>
       </ul>
     </div>
