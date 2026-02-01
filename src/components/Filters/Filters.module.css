@@ -1,11 +1,16 @@
 .sidebar {
   width: 360px;
+  padding: 0;
   display: flex;
   flex-direction: column;
+
 }
 
 .locationSection {
   margin-bottom: 32px;
+ display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .label {
@@ -17,6 +22,8 @@
 
 .inputWrapper {
   position: relative;
+  width: 100%;
+   
 }
 
 .iconMap {
@@ -26,17 +33,24 @@
   transform: translateY(-50%);
   fill: none;
   stroke: #101828;
+  pointer-events: none;
 }
 
 .input {
+  box-sizing: border-box;
   width: 100%;
-  padding: 18px 18px 18px 48px;
+  height: 56px;
+  padding: 18px 18px 14px 48px;
   background-color: #f7f7f7;
   border: none;
   border-radius: 12px;
   font-size: 16px;
+  color: #101828;
+  outline: none;
 }
-
+.input::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+}
 .filtersText {
   color: #475467;
   margin-bottom: 14px;
@@ -75,6 +89,7 @@
   font-weight: 500;
   font-size: 16px;
   padding: 12px;
+  outline: none;
 }
 
 .btnSearch {
@@ -99,6 +114,15 @@
 /* Ефект при наведенні або активному стані */
 .filterItem:hover {
   border-color: #e44848;
+}
+.filterItem:focus {
+  border-color: #101828; /* Ось твоя чорна рамка, яка зараз заважає */
+}
+.filterItem.selected {
+  border-color: #E44848 !important; 
+}
+.filterItem.іelected:focus {
+  border-color: #E44848 !important;
 }
 
 .filterItem span {

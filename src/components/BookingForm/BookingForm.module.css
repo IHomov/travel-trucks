@@ -2,7 +2,7 @@
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
   padding: 24px;
-  box-sizing: border-box;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
 }
@@ -10,33 +10,46 @@
 .formTitle {
   font-weight: 600;
   font-size: 20px;
+  line-height: 1.2;
   margin-bottom: 8px;
+  color: #101828;
 }
 
 .formText {
   color: #475467;
   font-size: 16px;
+  line-height: 1.5;
   margin-bottom: 24px;
 }
 
 .inputsGap {
   display: flex;
   flex-direction: column;
-  gap: 14px;
- 
+  gap: 14px; /* Відстань між інпутами як на макеті */
 }
 
-.bookingForm input,
+.inputWrapper {
+  position: relative;
+}
+
+/* Стиль для інпутів та текстової області */
+.inputField,
 .commentArea {
   width: 100%;
   padding: 18px;
-  background-color: #F7F7F7;
+  background-color: #F7F7F7; /* Світло-сірий фон з макета */
   border-radius: 12px;
-  border: 1px solid transparent;
-  box-sizing: border-box; /* Рятує від вилізання за межі */
+  border: none;
   font-size: 16px;
+  color: #101828;
   outline: none;
-   color: var(--main);
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.inputField::placeholder,
+.commentArea::placeholder {
+  color: #6C7275; /* Колір плейсхолдера */
 }
 
 .commentArea {
@@ -44,41 +57,34 @@
   resize: none;
 }
 
-.bookingForm input:focus,
-.commentArea:focus {
-  border-color: #E44848;
-}
-
+/* Червона кнопка по центру */
 .submitBtn {
-  margin-top: 24px;
+  margin: 24px auto 0; /* Відступ зверху та центрування */
   padding: 16px 60px;
-  background-color: #E44848;
-  color: white;
+  background-color: #E44848; /* Червоний колір TravelTrucks */
+  color: #ffffff;
   border: none;
   border-radius: 200px;
   font-weight: 500;
+  font-size: 16px;
   cursor: pointer;
   width: fit-content;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .submitBtn:hover {
   background-color: #D84343;
 }
 
-.dateInput::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  /* Можна додати свою іконку через filter, якщо вона має бути іншого кольору */
-  filter: invert(30%) sepia(10%) saturate(500%) hue-rotate(180deg) brightness(90%) contrast(90%);
-  opacity: 0.6;
+/* Текст помилки (абсолютне позиціювання, щоб не рухати кнопку) */
+.errorText {
+  position: absolute;
+  bottom: -16px;
+  left: 4px;
+  color: #E44848;
+  font-size: 12px;
 }
 
-.dateInput::-webkit-calendar-picker-indicator:hover {
-  opacity: 1;
-}
-
-/* Прибираємо стандартний вигляд на мобільних пристроях */
-.dateInput {
-  appearance: none;
-  -webkit-appearance: none;
+.inputError {
+  outline: 1px solid #E44848;
 }
